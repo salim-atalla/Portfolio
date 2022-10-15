@@ -3,7 +3,8 @@
   --color-light: #f9f9f9;
   --color-main: #3f74b5;
   --color-main-alt: #3968a1;
-  --color-main-light: #3f74b51a;
+  --color-main-light: #3f74b530;
+  --color-main-ligntest: #3f74b51a;
 
   --padding-main: 20px;
 
@@ -76,7 +77,7 @@ input:focus {
   transform: skewY(-6deg);
   z-index: -1;
   transform-origin: top left;
-  background-color: var(--color-main-light);
+  background-color: var(--color-main-lightest);
 }
 /* Start Navbar */
 .header .navbar {
@@ -151,15 +152,36 @@ input:focus {
   align-items: center;
   margin: -70px auto 0;
 }
+.header .profile .col-left {
+  position: relative;
+}
+.header .profile .col-left::before {
+  content: "";
+  position: absolute;
+  top: 11%;
+  left: 50%;
+  width: 50%;
+  height: 15%;
+  background-color: var(--color-main-light);
+}
+.header .profile .col-left::after {
+  content: "";
+  position: absolute;
+  bottom: 11%;
+  right: 50%;
+  width: 50%;
+  height: 15%;
+  background-color: var(--color-main-light);
+}
 .header .profile .image {
   margin: 50px;
   width: 350px;
   height: 350px;
-  overflow: hidden;
   position: relative;
   border-radius: 50%;
   filter: drop-shadow(0 0 3.75px #777);
 }
+
 .header .profile .image > img {
   max-width: 100%;
   position: absolute;
