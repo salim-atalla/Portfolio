@@ -2,7 +2,7 @@
 :root {
   --color-light: #f9f9f9;
   --color-main: #3f74b5;
-  --color-main-alt: #3968a1;
+  --color-main-alt: #305889;
   --color-main-light: #3f74b530;
   --color-main-lightest: #3f74b51a;
 
@@ -64,7 +64,12 @@ input:focus {
 
 /****** Start Header ******/
 .header {
-  height: 100vh;
+  position: relative;
+}
+@media (min-width: 992px) {
+  .header {
+    height: 100vh;
+  }
 }
 .header::before {
   content: "";
@@ -91,6 +96,11 @@ input:focus {
   height: 85px;
   position: relative;
 }
+@media (max-width: 767px) {
+  .header .navbar .container {
+    height: 70px;
+  }
+}
 .header .navbar .logo {
   color: var(--color-main);
 }
@@ -98,11 +108,40 @@ input:focus {
   padding: var(--padding-main);
   font-size: 30px;
 }
+@media (max-width: 767px) {
+  .header .navbar .logo > h1 {
+    font-size: 25px;
+  }
+}
+.header .navbar .menu-btn {
+  padding: 10px;
+  cursor: pointer;
+  display: none;
+}
+@media (max-width: 600px) {
+  .header .navbar .menu-btn {
+    display: block;
+  }
+}
+.header .navbar .menu-btn > i {
+  font-weight: 900;
+  font-size: 30px;
+  color: var(--color-main);
+  transition: var(--transition-main);
+}
+.header .navbar .menu-btn:hover > i {
+  color: var(--color-main-alt);
+}
 .header .navbar .nav-links {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 100%;
+}
+@media (max-width: 600px) {
+  .header .navbar .nav-links {
+    display: none;
+  }
 }
 .header .navbar .nav-links > li {
   padding: 15px;
@@ -134,23 +173,37 @@ input:focus {
   display: block;
   font-size: 17px;
 }
+@media (max-width: 767px) {
+  .header .navbar .nav-links > li > a {
+    font-size: 15px;
+  }
+}
 /* End Navbar */
 
 /* Start Profile */
 .header .profile {
-  height: calc(100vh - 185px);
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: rgb(63 116 181 / 10%); */
   height: calc(100% - 85px);
   position: relative;
+}
+@media (max-width: 767px) {
+  .header .profile {
+    height: calc(100% - 70px);
+  }
 }
 .header .profile .container {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   margin: -70px auto 0;
+}
+@media (max-width: 991px) {
+  .header .profile .container {
+    flex-direction: column;
+    margin: 30px auto;
+  }
 }
 .header .profile .col-left {
   position: relative;
@@ -164,6 +217,11 @@ input:focus {
   height: 15%;
   background-color: var(--color-main-light);
 }
+@media (max-width: 767px) {
+  .header .profile .col-left::before {
+    top: 14%;
+  }
+}
 .header .profile .col-left::after {
   content: "";
   position: absolute;
@@ -173,6 +231,11 @@ input:focus {
   height: 15%;
   background-color: var(--color-main-light);
 }
+@media (max-width: 767px) {
+  .header .profile .col-left::after {
+    bottom: 14%;
+  }
+}
 .header .profile .image {
   margin: 50px;
   width: 350px;
@@ -181,7 +244,12 @@ input:focus {
   border-radius: 50%;
   filter: drop-shadow(0 0 3.75px #777);
 }
-
+@media (max-width: 767px) {
+  .header .profile .image {
+    width: 250px;
+    height: 250px;
+  }
+}
 .header .profile .image > img {
   max-width: 100%;
   position: absolute;
@@ -196,9 +264,20 @@ input:focus {
   padding: 50px 50px 0;
   position: relative;
 }
+@media (max-width: 991px) {
+  .header .profile .text {
+    padding: 20px;
+    text-align: center;
+  }
+}
 .header .profile .text .main-title {
   font-size: 40px;
   color: var(--color-main);
+}
+@media (max-width: 767px) {
+  .header .profile .text .main-title {
+    font-size: 32px;
+  }
 }
 .header .profile .text .profession {
   font-size: 20px;
@@ -206,10 +285,20 @@ input:focus {
   font-weight: normal;
   margin: 10px 0 20px;
 }
+@media (max-width: 767px) {
+  .header .profile .text .profession {
+    font-size: 18px;
+  }
+}
 .header .profile .text .bref-bio {
   max-width: 500px;
   line-height: 1.6;
   color: #444;
+}
+@media (max-width: 767px) {
+  .header .profile .text .bref-bio {
+    max-width: 400px;
+  }
 }
 .header .profile .text .cv-btn {
   background-color: var(--color-main);
@@ -223,6 +312,12 @@ input:focus {
   width: fit-content;
   float: right;
   transition: var(--transition-main);
+}
+@media (max-width: 991px) {
+  .header .profile .text .cv-btn {
+    width: 70%;
+    float: none;
+  }
 }
 .header .profile .text .cv-btn:hover {
   background-color: var(--color-main-alt);
