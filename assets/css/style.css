@@ -7,6 +7,8 @@
   --color-main-lightest: #3f74b51a;
 
   --padding-main: 20px;
+  --padding-section-top: 100px;
+  --padding-section-bottom: 100px;
 
   --transition-main: 0.3s;
 }
@@ -57,6 +59,98 @@ input:focus {
 @media (min-width: 1200px) {
   .container {
     width: 1170px;
+  }
+}
+
+.main-section-title {
+  position: relative;
+  width: fit-content;
+  margin: auto;
+  margin-bottom: 70px;
+  padding: 10px 20px;
+  font-size: 30px;
+  color: var(--color-main);
+  background-color: var(--color-main-lightest);
+}
+.main-section-title .horizontal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 175%;
+  height: 3px;
+  background-color: var(--color-main);
+  animation: right-to-left 0.5s linear forwards;
+}
+.main-section-title .horizontal::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 175%;
+  height: 3px;
+  background-color: var(--color-main);
+  animation: left-to-right 0.5s linear forwards;
+}
+.main-section-title .vertical::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 130%;
+  width: 3px;
+  background-color: var(--color-main);
+  animation: bottom-to-top 0.5s linear forwards;
+}
+.main-section-title .vertical::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  height: 130%;
+  width: 3px;
+  background-color: var(--color-main);
+  animation: top-to-bottom 0.5s linear forwards;
+}
+.main-section-title:hover .horizontal::before {
+  animation: left-to-right 0.5s linear forwards;
+}
+.main-section-title:hover .horizontal::after {
+  animation: right-to-left 0.5s linear forwards;
+}
+.main-section-title:hover .vertical::before {
+  animation: top-to-bottom 0.5s linear forwards;
+}
+.main-section-title:hover .vertical::after {
+  animation: bottom-to-top 0.5s linear forwards;
+}
+
+@keyframes left-to-right {
+  from {
+    right: 0;
+  }
+  to {
+    right: -76%;
+  }
+}
+@keyframes right-to-left {
+  from {
+    left: 0;
+  }
+  to {
+    left: -76%;
+  }
+}
+@keyframes top-to-bottom {
+  from {
+    top: 0;
+  }
+  to {
+    top: -33%;
+  }
+}
+@keyframes bottom-to-top {
+  from {
+    bottom: 0;
+  }
+  to {
+    bottom: -33%;
   }
 }
 
@@ -380,3 +474,14 @@ input:focus {
 /* End Profile */
 
 /****** End Header ******/
+
+/****** Start Services ******/
+
+.services {
+  position: relative;
+  padding-top: var(--padding-section-top);
+  padding-bottom: var(--padding-section-bottom);
+  height: 100vh;
+}
+
+/****** End Services ******/
