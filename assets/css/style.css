@@ -65,92 +65,178 @@ input:focus {
 .main-section-title {
   position: relative;
   width: fit-content;
-  margin: auto;
-  margin-bottom: 70px;
+  margin: 0 auto 100px;
   padding: 10px 20px;
   font-size: 30px;
   color: var(--color-main);
-  background-color: var(--color-main-lightest);
 }
-.main-section-title .horizontal::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 175%;
-  height: 3px;
-  background-color: var(--color-main);
-  animation: right-to-left 0.5s linear forwards;
+@media (max-width: 767px) {
+  .main-section-title {
+    font-size: 25px;
+  }
 }
+.main-section-title .horizontal::before,
 .main-section-title .horizontal::after {
   content: "";
   position: absolute;
-  bottom: 0;
-  width: 175%;
+  width: 300px;
   height: 3px;
   background-color: var(--color-main);
-  animation: left-to-right 0.5s linear forwards;
 }
-.main-section-title .vertical::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  height: 130%;
-  width: 3px;
-  background-color: var(--color-main);
-  animation: bottom-to-top 0.5s linear forwards;
+@media (max-width: 767px) {
+  .main-section-title .horizontal::before,
+  .main-section-title .horizontal::after {
+    width: 250px;
+  }
 }
+.main-section-title .horizontal::before {
+  top: 0;
+  animation: right-to-left-l var(--transition-main) linear forwards;
+}
+@media (max-width: 767px) {
+  .main-section-title .horizontal::before {
+    animation: right-to-left-s var(--transition-main) linear forwards;
+  }
+}
+.main-section-title .horizontal::after {
+  bottom: 0;
+  animation: left-to-right-l var(--transition-main) linear forwards;
+}
+@media (max-width: 767px) {
+  .main-section-title .horizontal::after {
+    animation: left-to-right-s var(--transition-main) linear forwards;
+  }
+}
+.main-section-title .vertical::before,
 .main-section-title .vertical::after {
   content: "";
   position: absolute;
-  right: 0;
-  height: 130%;
+  height: 100px;
   width: 3px;
   background-color: var(--color-main);
-  animation: top-to-bottom 0.5s linear forwards;
 }
-.main-section-title:hover .horizontal::before {
-  animation: left-to-right 0.5s linear forwards;
+@media (max-width: 767px) {
+  .main-section-title .vertical::before,
+  .main-section-title .vertical::after {
+    height: 80px;
+  }
 }
-.main-section-title:hover .horizontal::after {
-  animation: right-to-left 0.5s linear forwards;
+.main-section-title .vertical::before {
+  left: 0;
+  animation: top-to-bottom-l var(--transition-main) linear forwards;
 }
-.main-section-title:hover .vertical::before {
-  animation: top-to-bottom 0.5s linear forwards;
+@media (max-width: 767px) {
+  .main-section-title .vertical::before {
+    animation: top-to-bottom-s var(--transition-main) linear forwards;
+  }
 }
-.main-section-title:hover .vertical::after {
-  animation: bottom-to-top 0.5s linear forwards;
+.main-section-title .vertical::after {
+  right: 0;
+  animation: bottom-to-top-l var(--transition-main) linear forwards;
+}
+@media (max-width: 767px) {
+  .main-section-title .vertical::after {
+    animation: bottom-to-top-s var(--transition-main) linear forwards;
+  }
 }
 
-@keyframes left-to-right {
+.main-section-title:hover .horizontal::before {
+  animation: left-to-right-l var(--transition-main) linear forwards;
+}
+@media (max-width: 767px) {
+  .main-section-title:hover .horizontal::before {
+    animation: left-to-right-s var(--transition-main) linear forwards;
+  }
+}
+.main-section-title:hover .horizontal::after {
+  animation: right-to-left-l var(--transition-main) linear forwards;
+}
+@media (max-width: 767px) {
+  .main-section-title:hover .horizontal::after {
+    animation: right-to-left-s var(--transition-main) linear forwards;
+  }
+}
+.main-section-title:hover .vertical::before {
+  animation: bottom-to-top-l var(--transition-main) linear forwards;
+}
+@media (max-width: 767px) {
+  .main-section-title:hover .vertical::before {
+    animation: bottom-to-top-s var(--transition-main) linear forwards;
+  }
+}
+.main-section-title:hover .vertical::after {
+  animation: top-to-bottom-l var(--transition-main) linear forwards;
+}
+@media (max-width: 767px) {
+  .main-section-title:hover .vertical::after {
+    animation: top-to-bottom-s var(--transition-main) linear forwards;
+  }
+}
+
+@keyframes left-to-right-l {
   from {
     right: 0;
   }
   to {
-    right: -76%;
+    right: -75px;
   }
 }
-@keyframes right-to-left {
+@keyframes right-to-left-l {
   from {
     left: 0;
   }
   to {
-    left: -76%;
+    left: -75px;
   }
 }
-@keyframes top-to-bottom {
+
+@keyframes top-to-bottom-l {
   from {
     top: 0;
   }
   to {
-    top: -33%;
+    top: -30px;
   }
 }
-@keyframes bottom-to-top {
+@keyframes bottom-to-top-l {
   from {
     bottom: 0;
   }
   to {
-    bottom: -33%;
+    bottom: -30px;
+  }
+}
+@keyframes left-to-right-s {
+  from {
+    right: 0;
+  }
+  to {
+    right: -56px;
+  }
+}
+@keyframes right-to-left-s {
+  from {
+    left: 0;
+  }
+  to {
+    left: -56px;
+  }
+}
+
+@keyframes top-to-bottom-s {
+  from {
+    top: 0;
+  }
+  to {
+    top: -17px;
+  }
+}
+@keyframes bottom-to-top-s {
+  from {
+    bottom: 0;
+  }
+  to {
+    bottom: -17px;
   }
 }
 
@@ -451,7 +537,7 @@ input:focus {
   padding: 17px 35px;
   border-radius: 10px;
   display: block;
-  margin: 40px auto 0;
+  margin: 30px auto 0;
   width: fit-content;
   float: right;
   transition: var(--transition-main);
@@ -481,7 +567,42 @@ input:focus {
   position: relative;
   padding-top: var(--padding-section-top);
   padding-bottom: var(--padding-section-bottom);
-  height: 100vh;
+}
+.services .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+}
+.services .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-direction: column;
+  padding: 30px 20px;
+  box-shadow: 0px 0px 20px -3px #c0d6f1;
+  border-radius: 10px;
+  transition: var(--transition-main);
+}
+.services .box:hover {
+  transform: translateY(-10px);
+}
+.services .box > i {
+  color: var(--color-main);
+}
+.services .box .text {
+  text-align: center;
+}
+.services .box .text > h3 {
+  color: var(--color-main);
+  font-size: 23px;
+}
+.services .box .text > p {
+  line-height: 1.6;
+  max-width: 90%;
+  margin: 15px auto;
+  color: #555;
+  font-size: 16px;
 }
 
 /****** End Services ******/
