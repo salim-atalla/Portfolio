@@ -27,3 +27,43 @@ const HandleDisplayNavbarMenu = () => {
   });
 };
 HandleDisplayNavbarMenu();
+
+// Handle the projects carousel
+const carousel = document.querySelector(".projects .carousel");
+const carouselCards = document.querySelector(".projects .carousel .cards");
+const leftArrow = document.querySelector(
+  ".projects .carousel-wrapper .left-arrow i"
+);
+const rightArrow = document.querySelector(
+  ".projects .carousel-wrapper .right-arrow i"
+);
+
+let scrollAmount = 0;
+let cardsGap = 30;
+let scrollPerClick =
+  document.querySelector(".projects .carousel .cards .card").clientWidth +
+  cardsGap;
+
+function carouselScrollLeft() {
+  carousel.scrollTo({
+    top: 0,
+    left: (scrollAmount -= scrollPerClick),
+    behavior: "smooth",
+  });
+  if (scrollAmount < 0) {
+    scrollAmount = 0;
+  }
+}
+
+function carouselScrollRight() {
+  if (scrollAmount <= carousel.scrollWidth - carousel.clientWidth) {
+    carousel.scrollTo({
+      top: 0,
+      left: (scrollAmount += scrollPerClick),
+      behavior: "smooth",
+    });
+  }
+}
+
+leftArrow.addEventListener("click", carouselScrollLeft);
+rightArrow.addEventListener("click", carouselScrollRight);

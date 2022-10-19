@@ -63,9 +63,12 @@ input:focus {
 }
 
 .main-section-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
-  width: fit-content;
-  margin: 0 auto 100px;
+  width: 225px;
+  margin: 0px auto 100px;
   padding: 10px 20px;
   font-size: 30px;
   color: var(--color-main);
@@ -562,11 +565,12 @@ input:focus {
 /****** End Header ******/
 
 /****** Start Services ******/
-
 .services {
   position: relative;
   padding-top: var(--padding-section-top);
   padding-bottom: var(--padding-section-bottom);
+  min-height: 100vh;
+  background-color: white;
 }
 .services .container {
   display: grid;
@@ -606,3 +610,108 @@ input:focus {
 }
 
 /****** End Services ******/
+
+/****** Start Projects ******/
+
+.projects {
+  position: relative;
+  padding-top: var(--padding-section-top);
+  padding-bottom: var(--padding-section-bottom);
+  height: 100vh;
+  background-color: var(--color-main-lightest);
+}
+.projects .carousel-wrapper {
+  width: 100%;
+  height: 350px;
+  background-image: url("../imgs/slider-bg.jpeg");
+  background-position: top;
+  background-size: cover;
+  position: relative;
+}
+.projects .carousel-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 25%);
+}
+.projects .carousel-wrapper .left-arrow,
+.projects .carousel-wrapper .right-arrow {
+  color: white;
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  cursor: pointer;
+  transition: var(--transition-main);
+  z-index: 2;
+}
+.projects .carousel-wrapper .left-arrow {
+  left: 0;
+  transform: rotate(180deg);
+}
+.projects .carousel-wrapper .right-arrow {
+  right: 0;
+}
+.projects .carousel-wrapper .left-arrow:hover,
+.projects .carousel-wrapper .right-arrow:hover {
+  background-color: rgba(255, 255, 255, 12%);
+}
+.projects .carousel-wrapper .left-arrow > i,
+.projects .carousel-wrapper .right-arrow > i {
+  left: 0;
+}
+.projects .carousel {
+  position: relative;
+  overflow: scroll;
+  height: 500px;
+  margin: 0 100px;
+}
+.projects .carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.projects .carousel .cards {
+  display: grid;
+  grid-template-columns: repeat(8, 350px);
+  gap: 30px;
+  padding: 50px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  transition: 0.5s;
+}
+.projects .carousel .cards .card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 1;
+
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.projects .carousel .cards .card > img {
+  width: 100%;
+}
+.projects .carousel .cards .card .text {
+  padding: 15px;
+}
+.projects .carousel .cards .card .text > h3 {
+  font-size: 20px;
+}
+.projects .carousel .cards .card .text > p {
+  line-height: 1.4;
+  margin-top: 15px;
+}
+/****** End Projects ******/
