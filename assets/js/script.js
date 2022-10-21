@@ -40,9 +40,9 @@ const rightArrow = document.querySelector(
 
 let scrollAmount = 0;
 let cardsGap = 30;
-let scrollPerClick =
-  document.querySelector(".projects .carousel .cards .card").clientWidth +
-  cardsGap;
+let scrollPerClick = 100;
+// document.querySelector(".projects .carousel .cards .card").clientWidth +
+// cardsGap;
 
 function carouselScrollLeft() {
   carousel.scrollTo({
@@ -67,3 +67,79 @@ function carouselScrollRight() {
 
 leftArrow.addEventListener("click", carouselScrollLeft);
 rightArrow.addEventListener("click", carouselScrollRight);
+
+// Function to create and add projects to the projects carousel
+function createProjectCard(url, codeUrl, img, title, description, tags) {
+  const projectsContainer = document.querySelector(
+    ".projects .carousel .cards"
+  );
+  let card = document.createElement("div");
+  card.classList.add("card");
+
+  // Create the head
+  let head = document.createElement("div");
+  head.classList.add("card-head");
+  head.innerHTML = `
+    <div class="face front">
+      <img src="${img}" alt="" />
+    </div>
+    <div class="face back">
+      <span class="card-head-btns">
+        <a href="${codeUrl}" class="code" target="_blank">
+          <i
+            class="fa-regular fa-code"
+            style="font-weight: 900"
+          ></i
+          >Code
+        </a>
+        <a href="${url}" class="view" target="_blank">
+          <i class="fa-regular fa-eye"></i>View
+        </a>
+      </span>
+    </div>
+  `;
+  card.appendChild(head);
+
+  // Create the body
+  let body = document.createElement("div");
+  body.classList.add("card-body");
+  body.innerHTML = `
+    <div class="text">
+      <h3>${title}</h3>
+      <p>${description}</p>
+    </div>
+  `;
+
+  let tagsContainer = document.createElement("div");
+  tagsContainer.classList.add("tags");
+
+  tags.forEach((tag) => {
+    let span = document.createElement("span");
+    span.classList.add("tag", tag);
+    span.appendChild(document.createTextNode(tag));
+    tagsContainer.appendChild(span);
+  });
+
+  body.appendChild(tagsContainer);
+  card.appendChild(body);
+  projectsContainer.appendChild(card);
+}
+
+// Get projects informations from the json object and push cards to the html document
+async function getProjects() {
+  const API = "./assets/data/projects.json";
+  const data = await (await fetch(API)).json();
+  let projects = Array.from(data).reverse();
+
+  projects.forEach((project) => {
+    createProjectCard(
+      project.url,
+      project.codeUrl,
+      project.img,
+      project.title,
+      project.description,
+      project.tags
+    );
+  });
+}
+getProjects();
