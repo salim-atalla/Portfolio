@@ -23,6 +23,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
+  /* font-family: 'Cairo', sans-serif; */
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -617,12 +618,12 @@ input:focus {
   position: relative;
   padding-top: var(--padding-section-top);
   padding-bottom: var(--padding-section-bottom);
-  height: 100vh;
+  min-height: 110vh;
   background-color: var(--color-main-lightest);
 }
 .projects .carousel-wrapper {
   width: 100%;
-  height: 350px;
+  height: 370px;
   background-image: url("../imgs/slider-bg.jpeg");
   background-position: top;
   background-size: cover;
@@ -672,7 +673,7 @@ input:focus {
   position: relative;
   overflow-x: scroll;
   overflow-y: hidden;
-  height: 500px;
+  height: 600px;
   margin: 0 100px;
 }
 .projects .carousel::-webkit-scrollbar {
@@ -680,21 +681,22 @@ input:focus {
 }
 
 .projects .carousel .cards {
-  display: grid;
-  grid-template-columns: repeat(8, 350px);
+  display: flex;
   gap: 30px;
-  padding: 50px 0;
+  padding: 30px 0;
   position: absolute;
   top: 0;
   left: 0;
-  min-height: 100%;
+  height: 100%;
   transition: 0.5s;
 }
 .projects .carousel .cards .card {
+  width: 400px;
   border-radius: 10px;
   overflow: hidden;
   z-index: 1;
-  min-height: fit-content;
+  height: 100%;
+  transition: var(--transition-main);
 
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -702,18 +704,109 @@ input:focus {
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
-.projects .carousel .cards .card > img {
+.projects .carousel .cards .card:hover {
+  transform: translateY(-10px);
+}
+.projects .carousel .cards .card .card-head {
   width: 100%;
+  height: 50%;
+  position: relative;
+
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+.projects .carousel .cards .card .card-head:hover {
+  transform: rotateY(-180deg);
+}
+.projects .carousel .cards .card .card-head .face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 30px;
+  color: white;
+
+  backface-visibility: hidden;
+}
+.projects .carousel .cards .card .card-head .front {
+}
+.projects .carousel .cards .card .card-head .back {
+  transform: rotateY(180deg);
+}
+.projects .carousel .cards .card .card-head img {
+  width: 100%;
+  height: 100%;
+}
+.projects .carousel .cards .card .card-head .card-head-btns {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #30588947;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  transition: var(--transition-main);
+  overflow: hidden;
+}
+.projects .carousel .cards .card .card-head .card-head-btns > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 20px;
+  border: 1px solid white;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: bold;
+  background-color: #30588947;
+  color: white;
+  letter-spacing: 1.7px;
+  position: relative;
+  overflow: hidden;
+}
+.projects .carousel .cards .card .card-head .card-head-btns > a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #30588955;
+  z-index: -1;
+  transition: var(--transition-main);
+}
+.projects .carousel .cards .card .card-head .card-head-btns > a:hover::before {
+  left: 0;
+}
+.projects .carousel .cards .card .card-head .card-head-btns > a > i {
+  margin-right: 10px;
+}
+.projects .carousel .cards .card .card-body {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
 }
 .projects .carousel .cards .card .text {
   padding: 15px;
 }
 .projects .carousel .cards .card .text > h3 {
   font-size: 20px;
+  color: var(--color-main-alt);
+  border-bottom: 1px solid var(--color-main);
+  padding-bottom: 15px;
+  letter-spacing: 2px;
 }
 .projects .carousel .cards .card .text > p {
-  line-height: 1.4;
-  margin-top: 15px;
+  line-height: 1.7;
+  margin-top: 20px;
+  color: var(--color-main-alt);
 }
 .projects .carousel .cards .card .tags {
   display: flex;
@@ -724,7 +817,7 @@ input:focus {
   padding: 20px;
 }
 .projects .carousel .cards .card .tags .tag {
-  padding: 3px 5px;
+  padding: 5px 10px;
   border: 1px solid black;
   border-radius: 30px;
   min-width: 50px;
@@ -741,13 +834,51 @@ input:focus {
   color: #2196f3;
   border-color: #2196f3;
 }
+.projects .carousel .cards .card .tags .tag.bootstrap {
+  color: #712cf9;
+  border-color: #712cf9;
+}
+.projects .carousel .cards .card .tags .tag.sass {
+  color: #cc6699;
+  border-color: #cc6699;
+}
 .projects .carousel .cards .card .tags .tag.js {
   color: #ffc107;
   border-color: #ffc107;
 }
+.projects .carousel .cards .card .tags .tag.api {
+  color: goldenrod;
+  border-color: goldenrod;
+}
 .projects .carousel .cards .card .tags .tag.php {
-  color: #673ab7;
-  border-color: #673ab7;
+  color: #4f5b93;
+  border-color: #4f5b93;
+}
+.projects .carousel .cards .card .tags .tag.mysql {
+  color: #f29111;
+  border-color: #f29111;
+}
+.projects .carousel .cards .card .card-btns {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.projects .carousel .cards .card .card-btns > a {
+  padding: 10px 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.projects .carousel .cards .card .card-btns > a i {
+  margin-right: 7px;
 }
 
 /****** End Projects ******/
+
+.space {
+  height: 100vh;
+  background-color: white;
+}
