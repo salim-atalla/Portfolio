@@ -446,9 +446,10 @@ input:focus {
   position: absolute;
   top: 11%;
   left: 50%;
-  width: 50%;
+  width: 45%;
   height: 15%;
   background-color: var(--color-main-light);
+  border-radius: 0 50px 0 0;
 }
 @media (max-width: 767px) {
   .header .profile .col-left::before {
@@ -460,9 +461,10 @@ input:focus {
   position: absolute;
   bottom: 11%;
   right: 50%;
-  width: 50%;
+  width: 45%;
   height: 15%;
   background-color: var(--color-main-light);
+  border-radius: 0 0 0 50px;
 }
 @media (max-width: 767px) {
   .header .profile .col-left::after {
@@ -534,34 +536,6 @@ input:focus {
     max-width: 400px;
   }
 }
-.header .profile .text .cv-btn {
-  background-color: var(--color-main);
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
-  padding: 17px 35px;
-  border-radius: 10px;
-  display: block;
-  margin: 30px auto 0;
-  width: fit-content;
-  float: right;
-  transition: var(--transition-main);
-}
-@media (max-width: 991px) {
-  .header .profile .text .cv-btn {
-    width: 70%;
-    float: none;
-  }
-}
-@media (max-width: 767px) {
-  .header .profile .text .cv-btn {
-    width: fit-content;
-    font-size: 17px;
-  }
-}
-.header .profile .text .cv-btn:hover {
-  background-color: var(--color-main-alt);
-}
 /* End Profile */
 
 /****** End Header ******/
@@ -625,7 +599,7 @@ input:focus {
 .projects .carousel-wrapper {
   width: 100%;
   height: 340px;
-  background-image: url("../imgs/slider-bg.jpeg");
+  background-image: url("../imgs/slider-bg.webp");
   background-position: top;
   background-size: cover;
   position: relative;
@@ -778,7 +752,7 @@ input:focus {
 }
 .projects .carousel .cards .card .card-head {
   width: 100%;
-  height: 45%;
+  height: 47%;
   position: relative;
 
   transform-style: preserve-3d;
@@ -866,7 +840,7 @@ input:focus {
 }
 .projects .carousel .cards .card .card-body {
   width: 100%;
-  height: 55%;
+  height: 53%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -907,7 +881,7 @@ input:focus {
   font-size: 14px;
   font-weight: bold;
   color: white;
-  background-image: url("../imgs/slider-bg.jpeg");
+  background-image: url("../imgs/slider-card-bg.webp");
   background-position: top;
   background-size: cover;
   position: relative;
@@ -1008,7 +982,110 @@ input:focus {
 
 /****** End Projects ******/
 
-.space {
-  height: 100vh;
+/****** Start About ******/
+.about {
+  position: relative;
+  padding-top: var(--padding-section-top);
+  padding-bottom: var(--padding-section-bottom);
+  margin-top: 50px;
+  min-height: 100vh;
+}
+.about .container {
+}
+@media (max-width: 767px) {
+  .about .container {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+.about .text {
+  margin-bottom: 40px;
+}
+.about .text > h3 {
+  font-size: 25px;
+  margin-bottom: 10px;
+  color: var(--color-main-alt);
+}
+.about .text > p {
+  line-height: 1.5;
+}
+.about .history {
+  margin-left: 100px;
+  margin-right: 150px;
+  padding: 50px 0 50px 50px;
+  border-left: 3px solid var(--color-main-alt);
+}
+@media (max-width: 992px) {
+  .about .history {
+    margin-right: 50px;
+  }
+}
+@media (max-width: 767px) {
+  .about .history {
+    border-left: none;
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+.about .history .point {
+  position: relative;
+  background-color: var(--color-main-lightest);
+  padding: 20px;
+  border-radius: 0 20px 20px 0;
+  border-left: 3px solid var(--color-main-alt);
+}
+.about .history .point:not(:last-child) {
+  margin-bottom: 50px;
+}
+@media (max-width: 767px) {
+  .about .history .point:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+.about .history .point::before {
+  content: attr(data-date);
+  position: absolute;
+  top: 50%;
+  left: -160px;
+  transform: translateY(-50%);
+  width: 90px;
+  color: var(--color-main-alt);
+  text-align: right;
+  font-weight: bold;
+}
+@media (max-width: 767px) {
+  .about .history .point::before {
+    content: "( " attr(data-date) " )";
+    width: 110px;
+    top: 30px;
+    left: 120px;
+    text-align: left;
+  }
+}
+.about .history .point::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -63px;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border: 3px solid var(--color-main-alt);
+  border-radius: 50%;
   background-color: white;
 }
+@media (max-width: 767px) {
+  .about .history .point::after {
+    display: none;
+  }
+}
+.about .history .point > h4 {
+  font-size: 18px;
+  margin-bottom: 7px;
+  color: var(--color-main-alt);
+}
+.about .history .point > p {
+  line-height: 1.5;
+}
+/****** End About ******/
