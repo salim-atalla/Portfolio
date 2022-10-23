@@ -451,6 +451,11 @@ input:focus {
 .header .profile .col-left {
   position: relative;
 }
+@media (max-width: 992px) {
+  .header .profile .col-left {
+    margin-top: 100px;
+  }
+}
 .header .profile .col-left::before {
   content: "";
   position: absolute;
