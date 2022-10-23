@@ -730,7 +730,7 @@ input:focus {
   cursor: pointer;
 
   background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 20px 1px var(--color-main);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -1034,6 +1034,7 @@ input:focus {
   padding: 20px;
   border-radius: 0 20px 20px 0;
   border-left: 3px solid var(--color-main-alt);
+  box-shadow: 5px 5px 20px -15px var(--color-main);
 }
 .about .history .point:not(:last-child) {
   margin-bottom: 50px;
