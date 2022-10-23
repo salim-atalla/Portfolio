@@ -279,9 +279,11 @@ input:focus {
 }
 /* Start Navbar */
 .header .navbar {
-  background-color: var(--color-light);
+  background-color: #f9f9f9cd;
   box-shadow: 0px 1px 15px -4px #ddd;
   z-index: 100;
+  width: 100%;
+  position: fixed;
 }
 .header .navbar .container {
   display: flex;
