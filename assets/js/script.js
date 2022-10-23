@@ -1,5 +1,5 @@
 // Handle click event for navbar menu on small screens
-const HandleDisplayNavbarMenu = () => {
+const handleDisplayNavbarMenu = () => {
   const menuBtn = document.querySelector(".header .navbar .menu-btn");
 
   menuBtn.addEventListener("click", () => {
@@ -26,10 +26,20 @@ const HandleDisplayNavbarMenu = () => {
     }
   });
 };
-HandleDisplayNavbarMenu();
+handleDisplayNavbarMenu();
 
 // Function to create and add projects to the projects carousel
-function createProjectCard(url, codeUrl, img, title, description, tags) {
+function createProjectCard(
+  url,
+  codeUrl,
+  img,
+  title,
+  description,
+  tags,
+  type,
+  totalNumber,
+  currentIndex
+) {
   const projectsContainer = document.querySelector(
     ".projects .carousel .cards"
   );
@@ -79,8 +89,24 @@ function createProjectCard(url, codeUrl, img, title, description, tags) {
     span.appendChild(document.createTextNode(tag));
     tagsContainer.appendChild(span);
   });
-
   body.appendChild(tagsContainer);
+
+  // Create the info field
+  let info = document.createElement("div");
+  info.classList.add("info");
+
+  info.innerHTML = `
+    <div class="project-type">
+        Project Type: <span>${type}</span>
+      </div>
+      <div class="project-number">
+        Project N°:
+        <span class="current">${currentIndex}</span>
+        /
+        <span class="total">${totalNumber}</span>
+    </div>
+  `;
+  body.appendChild(info);
   card.appendChild(body);
   projectsContainer.appendChild(card);
 }
@@ -91,23 +117,27 @@ async function getProjects() {
   const data = await (await fetch(API)).json();
   let projects = Array.from(data).reverse();
 
-  projects.forEach((project) => {
+  projects.forEach((project, index) => {
     createProjectCard(
       project.url,
       project.codeUrl,
       project.img,
       project.title,
       project.description,
-      project.tags
+      project.tags,
+      project.type,
+      projects.length,
+      index + 1
     );
   });
 
-  HandleProjectsCarousel();
+  handleProjectsCarousel();
+  handleClickOnCard();
 }
 getProjects();
 
 // Handle the projects carousel
-function HandleProjectsCarousel() {
+function handleProjectsCarousel() {
   const carousel = document.querySelector(".projects .carousel");
   const carouselCards = document.querySelector(".projects .carousel .cards");
   const leftArrow = document.querySelector(
@@ -147,4 +177,26 @@ function HandleProjectsCarousel() {
 
   leftArrow.addEventListener("click", carouselScrollLeft);
   rightArrow.addEventListener("click", carouselScrollRight);
+}
+
+// Handle click on a card
+function handleClickOnCard() {
+  const cards = Array.from(
+    document.querySelectorAll(".projects .carousel .cards .card")
+  );
+
+  cards.forEach((card) => {
+    card.addEventListener("click", (event) => {
+      if (card.children[0].classList.contains("selected")) {
+        card.children[0].classList.remove("selected");
+      } else {
+        // Remove selected class from all cards
+        cards.forEach((card) => {
+          card.children[0].classList.remove("selected");
+        });
+        // Add selected class to the card target 'on click'
+        card.children[0].classList.add("selected");
+      }
+    });
+  });
 }

@@ -741,18 +741,24 @@ input:focus {
   transition: 0.5s;
 }
 .projects .carousel .cards .card {
-  width: 430px;
+  width: 400px;
   border-radius: 10px;
   overflow: hidden;
   z-index: 1;
   height: 100%;
   transition: var(--transition-main);
+  cursor: pointer;
 
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
+}
+@media (min-width: 992px) {
+  .projects .carousel .cards .card:hover {
+    transform: translateY(-10px);
+  }
 }
 @media (max-width: 992px) {
   .projects .carousel .cards .card {
@@ -764,12 +770,9 @@ input:focus {
     width: 320px;
   }
 }
-.projects .carousel .cards .card:hover {
-  transform: translateY(-10px);
-}
 .projects .carousel .cards .card .card-head {
   width: 100%;
-  height: 50%;
+  height: 45%;
   position: relative;
 
   transform-style: preserve-3d;
@@ -785,7 +788,7 @@ input:focus {
     height: 40%;
   }
 }
-.projects .carousel .cards .card .card-head:hover {
+.projects .carousel .cards .card .card-head.selected {
   transform: rotateY(-180deg);
 }
 .projects .carousel .cards .card .card-head .face {
@@ -857,19 +860,21 @@ input:focus {
 }
 .projects .carousel .cards .card .card-body {
   width: 100%;
-  height: 50%;
+  height: 55%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
+  position: relative;
 }
 @media (max-width: 992px) {
   .projects .carousel .cards .card .card-body {
-    height: 55%;
+    height: 60%;
   }
 }
 .projects .carousel .cards .card .text {
   padding: 15px;
+  flex: 1;
 }
 .projects .carousel .cards .card .text > h3 {
   font-size: 20px;
@@ -883,13 +888,32 @@ input:focus {
   margin-top: 20px;
   color: var(--color-main-alt);
 }
+@media (max-width: 500px) {
+  .projects .carousel .cards .card .text > p {
+    line-height: 1.5;
+  }
+}
+.projects .carousel .cards .card .info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  margin: 0 15px;
+  font-size: 14px;
+  color: var(--color-main-alt);
+  border-top: 1px solid var(--color-main-alt);
+  font-weight: bold;
+}
+.projects .carousel .cards .card .info span {
+  font-weight: normal;
+}
 .projects .carousel .cards .card .tags {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
-  padding: 20px;
+  padding: 10px;
 }
 .projects .carousel .cards .card .tags .tag {
   padding: 5px 10px;

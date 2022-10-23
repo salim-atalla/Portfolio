@@ -5,8 +5,9 @@
     "codeUrl": "https://github.com/salim-atalla/Fetch-GitHub-App",
     "img": "./assets/imgs/project-01.png",
     "title": "Fetch GitHub App",
-    "description": "Memory Game is a game for web was created using pure HTML/CSS/JS, it was designed by \"Elzero Web School\" and I turned this design into a code.",
-    "tags": ["html", "css", "js", "api"]
+    "description": "Fetch Github is a web application was created using pure HTML/CSS/JS based on a public \"Github\" API without any frameworks. It was designed and turned into a code by myself.",
+    "tags": ["html", "css", "js", "api"],
+    "type": "Web App"
   },
   {
     "id": 1,
@@ -14,8 +15,9 @@
     "codeUrl": "https://github.com/salim-atalla/Memory-Game",
     "img": "./assets/imgs/project-02.png",
     "title": "Memory Game",
-    "description": "Fetch Github is a web application was created using pure HTML/CSS/JS based on a public \"Github\" API without any frameworks. It was designed and turned into a code by myself.",
-    "tags": ["html", "css", "js"]
+    "description": "Memory Game is a game for web was created using pure HTML/CSS/JS, it was designed by \"Elzero Web School\" and I turned this design into a code.",
+    "tags": ["html", "css", "js"],
+    "type": "Web App"
   },
   {
     "id": 2,
@@ -24,7 +26,8 @@
     "img": "./assets/imgs/project-03.png",
     "title": "Typing Speed App",
     "description": "Typing Speed App is a web application was created using pure HTML/CSS/JS, it was designed by \"Elzero Web School\" and I turned this design into a code.",
-    "tags": ["html", "css", "js"]
+    "tags": ["html", "css", "js"],
+    "type": "Web App"
   },
   {
     "id": 3,
@@ -33,7 +36,8 @@
     "img": "./assets/imgs/project-04.png",
     "title": "Quiz App",
     "description": "Quiz App is a web application was created using pure HTML/CSS/JS based on a public API \"the-trivia-api.com\" without any frameworks. It was designed and turned into a code by myself.",
-    "tags": ["html", "css", "js", "api"]
+    "tags": ["html", "css", "js", "api"],
+    "type": "Web App"
   },
   {
     "id": 4,
@@ -42,7 +46,8 @@
     "img": "./assets/imgs/project-05.png",
     "title": "Leon",
     "description": "Leon is a website template was created using pure HTML/CSS without any frameworks. The design was created by \"graphberry.com\" as a PSD file and I turned the design into a website.",
-    "tags": ["html", "css"]
+    "tags": ["html", "css"],
+    "type": "Template"
   },
   {
     "id": 5,
@@ -51,7 +56,8 @@
     "img": "./assets/imgs/project-06.png",
     "title": "Kasper",
     "description": "Kasper is a website template was created using pure HTML/CSS without any frameworks. The design was created by \"graphberry.com\" as a PSD file and I turned the design into a website.",
-    "tags": ["html", "css"]
+    "tags": ["html", "css"],
+    "type": "Template"
   },
   {
     "id": 6,
@@ -60,7 +66,8 @@
     "img": "./assets/imgs/project-07.png",
     "title": "Elzero",
     "description": "Elzero is a website template was created using pure HTML/CSS/JS without any frameworks. The design was created by \"Elzero Web Academy\" and I turned the design into a website.",
-    "tags": ["html", "css", "js"]
+    "tags": ["html", "css", "js"],
+    "type": "Template"
   },
   {
     "id": 7,
@@ -69,6 +76,7 @@
     "img": "./assets/imgs/project-08.png",
     "title": "My Portfolio",
     "description": "My Portfolio is one of my favorite projects where I had created this website from scratch. I have created the design on my own and turned it into a nice responsive website.",
-    "tags": ["html", "css", "js", "api"]
+    "tags": ["html", "css", "js", "api"],
+    "type": "Template"
   }
 ]
