@@ -1145,9 +1145,6 @@ input:focus {
     width: 100%;
   }
 }
-.contact form ::placeholder {
-  opacity: 0.7;
-}
 .contact form > input,
 .contact form > textarea {
   padding: 15px 20px;
