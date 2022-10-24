@@ -76,7 +76,7 @@
     "img": "./assets/imgs/project-08.png",
     "title": "My Portfolio",
     "description": "My Portfolio is one of my favorite projects where I had created this website from scratch. I have created the design on my own and turned it into a nice responsive website.",
-    "tags": ["html", "css", "js", "api"],
+    "tags": ["html", "css", "js", "api", "php"],
     "type": "Template"
   }
 ]

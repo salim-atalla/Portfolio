@@ -229,3 +229,6 @@ async function getTimePoints() {
   });
 }
 getTimePoints();
+
+// Handle contact form
+function handleContactForm() {}

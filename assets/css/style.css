@@ -1133,7 +1133,7 @@ input:focus {
 .contact .image > img {
   width: 100%;
   position: absolute;
-  bottom: -143.5px;
+  bottom: -177px;
   left: 0;
   color: var(--color-main);
 }
@@ -1166,7 +1166,8 @@ input:focus {
 .contact form #last-name {
   width: calc(50% - 10px);
 }
-.contact form #email {
+.contact form #email,
+.contact form #subject {
   width: 100%;
 }
 .contact form #message {

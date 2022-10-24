@@ -174,40 +174,7 @@
               accusamus.
             </p>
           </div>
-          <ul class="history">
-            <!-- <li class="point" data-date="2019 - 2023">
-              <h4>Point Title</h4>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit
-                veritatis ad iusto aut molestias sunt perferendis similique,
-                porro itaque cum architecto adipisci doloremque consectetur
-                earum temporibus accusamus tenetur iure officiis minus eos
-                impedit delectus odio omnis? Facilis, deserunt est, voluptates
-                quae, accusamus excepturi repudiandae praesentium dolorem saepe
-                sapiente ratione. Alias.
-              </p>
-            </li>
-            <li class="point" data-date="2021">
-              <h4>Point Title</h4>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi
-                recusandae vitae perferendis cupiditate iure eius tenetur
-                laborum excepturi aliquam magni laboriosam, vel nostrum quaerat
-                voluptatibus commodi! Ratione voluptate totam sapiente?
-              </p>
-            </li>
-            <li class="point" data-date="2022">
-              <h4>Point Title</h4>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-                quaerat quos recusandae, facere ea, hic, porro eos voluptatem
-                quisquam ipsum maxime sequi vitae! Eos, a similique. Accusamus
-                exercitationem, repellat quam deserunt dolore debitis obcaecati
-                voluptatibus placeat ipsum ipsam repudiandae, harum repellendus.
-                Ex placeat praesentium facilis!
-              </p>
-            </li> -->
-          </ul>
+          <ul class="history"></ul>
         </div>
       </section>
       <!-- End About -->
@@ -223,7 +190,7 @@
           <div class="image">
             <img src="./assets/imgs/contact.svg" alt="Contact image" />
           </div>
-          <form action="">
+          <form action="index.php" method="POST" name="">
             <input
               type="text"
               name="first-name"
@@ -242,6 +209,12 @@
               id="email"
               placeholder="Your Email"
             />
+            <input
+              type="text"
+              name="subject"
+              id="subject"
+              placeholder="Subject"
+            />
             <textarea
               name="message"
               id="message"
@@ -258,3 +231,56 @@
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
+
+
+<?php
+
+  if ($_SERVER['REQUEST_METHOD'] === "POST") {
+
+    // First Name Validation
+    if (empty($_POST['first-name'])) {
+      $firstNameError = 'First name is empty';
+    } else {
+      $firstName = $_POST['first-name'];
+    }
+
+    // Last Name Validation
+    if (empty($_POST['last-name'])) {
+      $lastNameError = 'Last name is empty';
+    } else {
+      $lastName = $_POST['last-name'];
+    }
+
+    // Email Validation
+    if (empty($_POST['email'])) {
+      $emailError = 'Email is empty';
+    } else {
+      $email = $_POST['email'];
+      // validating the email
+      if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $emailError = 'Invalid email';
+      }
+    }
+
+    // Subject Validation
+    if (empty($_POST['subject'])) {
+      $subjectError = 'Subject is empty';
+    } else {
+      $subject = $_POST['subject'];
+    }
+
+    // Message Validation
+    if (empty($_POST['message'])) {
+      $messageError = 'Message is empty';
+    } else {
+      $message = $_POST['message'];
+    }
+  }
+
+  // if (isset($firstName) && isset($lastName) && isset($email) && isset($subject) && isset($message)) {
+  //   echo "firstName: " . $firstName . ", lastName: " . $lastName . "<br>";
+  //   echo "email: " . $email . "<br>";
+  //   echo "subject: " . $subject . "<br>";
+  //   echo "message: " . $message . "<br>";
+  // }
+  
