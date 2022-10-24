@@ -1198,3 +1198,53 @@ input:focus {
 }
 
 /****** End Contact ******/
+
+/****** Start Footer ******/
+.footer {
+  position: relative;
+  padding-top: calc(var(--padding-section-top) / 3);
+  padding-bottom: calc(var(--padding-section-bottom) / 3);
+  background-image: url("../imgs/slider-bg.webp");
+  background-size: cover;
+  color: white;
+  text-align: center;
+}
+.footer::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0, 70%);
+}
+.footer .container {
+  position: relative;
+}
+.footer img {
+  margin-bottom: 20px;
+}
+.footer p:not(.copyright) {
+  padding: 20px;
+  margin: 20px auto;
+  text-transform: uppercase;
+  border-bottom: 1px solid white;
+  width: fit-content;
+  font-size: 22px;
+}
+.footer .social-icons i {
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: var(--transition-main);
+}
+.footer .social-icons i:hover {
+  color: var(--color-main);
+}
+.footer .copyright {
+  margin-top: 40px;
+}
+.footer .copyright span {
+  color: var(--color-main);
+  font-weight: bold;
+}
+/****** End Footer ******/
