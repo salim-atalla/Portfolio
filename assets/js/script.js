@@ -113,7 +113,7 @@ function createProjectCard(
 
 // Get projects informations from the json object and push cards to the html document
 async function getProjects() {
-  const API = "./assets/data/projects.json";
+  const API = "assets/data/projects.json";
   const data = await (await fetch(API)).json();
   let projects = Array.from(data).reverse();
 
@@ -200,3 +200,32 @@ function handleClickOnCard() {
     });
   });
 }
+
+// Handle Add a time point to the about section
+function addTimePoint(date, title, description) {
+  const history = document.querySelector(".about .history"); // ul of points
+
+  // Create a time point
+  let point = document.createElement("li");
+  point.classList.add("point");
+  point.dataset.date = date;
+
+  point.innerHTML = `
+    <h4>${title}</h4>
+    <p>${description}</p>
+  `;
+  history.appendChild(point);
+}
+
+// Get time points from the API
+async function getTimePoints() {
+  const API = "assets/data/timePoints.json";
+  const data = await (await fetch(API)).json();
+
+  let points = Array.from(data);
+
+  points.forEach((point) => {
+    addTimePoint(point.date, point.title, point.description);
+  });
+}
+getTimePoints();
