@@ -2,12 +2,6 @@
 
 <?php
 
-/*
-  In order to use this file, you should change index.html to index.php + 
-  set the action attribute to "mail.php" in the contact form +
-  set the method to POST
-*/
-
   if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
     // Test Validation
