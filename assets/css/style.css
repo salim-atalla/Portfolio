@@ -1138,10 +1138,11 @@ input:focus {
   color: var(--color-main);
 }
 .contact form {
-  width: 55%;
+  width: 40%;
   display: flex;
   flex-wrap: wrap;
   font-size: 15px;
+  position: relative;
 }
 @media (max-width: 767px) {
   .contact form {
@@ -1154,18 +1155,12 @@ input:focus {
   border: 1px solid var(--color-main-lightest);
   color: #333;
   font-size: 16px;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 .contact form > input:not(:last-of-type) {
   margin-bottom: 20px;
 }
-.contact form #first-name {
-  width: calc(50% - 10px);
-  margin-right: 20px;
-}
-.contact form #last-name {
-  width: calc(50% - 10px);
-}
+.contact form #name,
 .contact form #email,
 .contact form #subject {
   width: 100%;
@@ -1177,17 +1172,16 @@ input:focus {
   resize: none;
 }
 .contact form input[type="submit"] {
-  width: fit-content;
   font-size: 20px;
   font-weight: bold;
   background-color: var(--color-main);
   color: white;
   padding: 15px 30px;
-  margin-left: auto;
   cursor: pointer;
   transition: var(--transition-main);
   margin-top: 20px;
   width: 100%;
+  padding: 10px;
 }
 @media (max-width: 767px) {
   .contact form input[type="submit"] {
@@ -1240,6 +1234,23 @@ input:focus {
 }
 .footer .social-icons i:hover {
   color: var(--color-main);
+}
+.footer .social-icons .upwork {
+  position: relative;
+  top: 6px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+.footer .social-icons .upwork svg {
+  width: 22px;
+  height: 22px;
+}
+.footer .social-icons .upwork svg path {
+  fill: white;
+  transition: var(--transition-main);
+}
+.footer .social-icons .upwork:hover svg path {
+  fill: var(--color-main);
 }
 .footer .copyright {
   margin-top: 40px;
