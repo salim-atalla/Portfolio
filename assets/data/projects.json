@@ -1,8 +1,8 @@
 [
   {
     "id": 0,
-    "url": "https://salim-atalla.github.io/Fetch-GitHub-App",
-    "codeUrl": "https://github.com/salim-atalla/Fetch-GitHub-App",
+    "url": "https://salim-atalla.github.io/fetch-gitHub-app",
+    "codeUrl": "https://github.com/salim-atalla/fetch-gitHub-app",
     "img": "./assets/imgs/project-01.png",
     "title": "Fetch GitHub App",
     "description": "Fetch Github is a web application was created using pure HTML/CSS/JS based on a public \"Github\" API without any frameworks. It was designed and turned into a code by myself.",
@@ -11,8 +11,8 @@
   },
   {
     "id": 1,
-    "url": "https://salim-atalla.github.io/Typing-Speed-App",
-    "codeUrl": "https://github.com/salim-atalla/Typing-Speed-App",
+    "url": "https://salim-atalla.github.io/typing-speed-app",
+    "codeUrl": "https://github.com/salim-atalla/typing-speed-app",
     "img": "./assets/imgs/project-02.png",
     "title": "Typing Speed App",
     "description": "Typing Speed App is a web application was created using pure HTML/CSS/JS, it was designed by \"Elzero Web School\" and I turned this design into a code.",
@@ -21,8 +21,8 @@
   },
   {
     "id": 2,
-    "url": "https://salim-atalla.github.io/Quiz-App",
-    "codeUrl": "https://github.com/salim-atalla/Quiz-App",
+    "url": "https://salim-atalla.github.io/quiz-app",
+    "codeUrl": "https://github.com/salim-atalla/quiz-app",
     "img": "./assets/imgs/project-03.png",
     "title": "Quiz App",
     "description": "Quiz App is a web application was created using pure HTML/CSS/JS based on a public API \"the-trivia-api.com\" without any frameworks. It was designed and turned into a code by myself.",
@@ -31,8 +31,8 @@
   },
   {
     "id": 3,
-    "url": "https://salim-atalla.github.io/One-Piece-Game",
-    "codeUrl": "https://github.com/salim-atalla/One-Piece-Game",
+    "url": "https://salim-atalla.github.io/one-piece-game",
+    "codeUrl": "https://github.com/salim-atalla/one-piece-game",
     "img": "./assets/imgs/project-04.png",
     "title": "Memory Game - One Piece",
     "description": "Memory Game is a game with one piece theme for web was created using pure HTML/CSS/JS, I have created the design on my own and turned it into a code.",
@@ -41,8 +41,8 @@
   },
   {
     "id": 4,
-    "url": "https://salim-atalla.github.io/Template-One",
-    "codeUrl": "https://github.com/salim-atalla/Template-One",
+    "url": "https://salim-atalla.github.io/leon-template",
+    "codeUrl": "https://github.com/salim-atalla/leon-template",
     "img": "./assets/imgs/project-05.png",
     "title": "Leon",
     "description": "Leon is a website template was created using pure HTML/CSS without any frameworks. The design was created by \"graphberry.com\" as a PSD file and I turned the design into a website.",
@@ -51,8 +51,8 @@
   },
   {
     "id": 5,
-    "url": "https://salim-atalla.github.io/Template-Two",
-    "codeUrl": "https://github.com/salim-atalla/Template-Two",
+    "url": "https://salim-atalla.github.io/kasper-template",
+    "codeUrl": "https://github.com/salim-atalla/kasper-template",
     "img": "./assets/imgs/project-06.png",
     "title": "Kasper",
     "description": "Kasper is a website template was created using pure HTML/CSS without any frameworks. The design was created by \"graphberry.com\" as a PSD file and I turned the design into a website.",
@@ -61,8 +61,8 @@
   },
   {
     "id": 6,
-    "url": "https://salim-atalla.github.io/Template-Three",
-    "codeUrl": "https://github.com/salim-atalla/Template-Three",
+    "url": "https://salim-atalla.github.io/elzero-template",
+    "codeUrl": "https://github.com/salim-atalla/elzero-template",
     "img": "./assets/imgs/project-07.png",
     "title": "Elzero",
     "description": "Elzero is a website template was created using pure HTML/CSS/JS without any frameworks. The design was created by \"Elzero Web Academy\" and I turned the design into a website.",
@@ -71,8 +71,8 @@
   },
   {
     "id": 7,
-    "url": "https://salim-atalla.github.io/Portfolio",
-    "codeUrl": "https://github.com/salim-atalla/Portfolio",
+    "url": "https://salim-atalla.github.io/portfolio",
+    "codeUrl": "https://github.com/salim-atalla/portfolio",
     "img": "./assets/imgs/project-08.png",
     "title": "My Portfolio",
     "description": "My Portfolio is one of my favorite projects where I had created this website from scratch. I have created the design on my own and turned it into a nice responsive website.",
