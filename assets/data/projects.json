@@ -1,8 +1,8 @@
 [
   {
     "id": 0,
-    "url": "https://salim-atalla.github.io/fetch-gitHub-app",
-    "codeUrl": "https://github.com/salim-atalla/fetch-gitHub-app",
+    "url": "https://salim-atalla.github.io/fetch-github-app",
+    "codeUrl": "https://github.com/salim-atalla/fetch-github-app",
     "img": "./assets/imgs/project-01.png",
     "title": "Fetch GitHub App",
     "description": "Fetch Github is a web application was created using pure HTML/CSS/JS based on a public \"Github\" API without any frameworks. It was designed and turned into a code by myself.",
