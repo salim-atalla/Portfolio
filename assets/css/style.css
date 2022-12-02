@@ -1149,6 +1149,25 @@ input:focus {
     width: 100%;
   }
 }
+.contact form > i {
+  position: absolute;
+  left: 16px;
+  font-size: 16px;
+  color: #555;
+}
+.contact form > input#name + i {
+  top: 16px;
+}
+.contact form > input#email + i {
+  top: 87px;
+}
+.contact form > i {
+  position: absolute;
+  left: 16px;
+  font-size: 16px;
+  color: #777;
+}
+
 .contact form > input,
 .contact form > textarea {
   padding: 15px 20px;
@@ -1156,6 +1175,10 @@ input:focus {
   color: #333;
   font-size: 16px;
   border-radius: 3px;
+}
+.contact form > input#name,
+.contact form > input#email {
+  padding-left: 40px;
 }
 .contact form > input:not(:last-of-type) {
   margin-bottom: 20px;
